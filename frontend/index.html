@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion MNIST Classifier</title>
+</head>
+<body>
+  <h1>Upload an Image for Prediction</h1>
+  <input type="file" id="imageInput">
+  <button onclick="predict()">Predict</button>
+  <p id="result"></p>
+
+  <script>
+    async function predict() {
+      const fileInput = document.getElementById('imageInput');
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("Please select an image file!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('http://localhost:8000/predict', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        document.getElementById('result').innerText = "Prediction failed.";
+        return;
+      }
+
+      const data = await response.json();
+      document.getElementById('result').innerText = `Class: ${data.class}, Confidence: ${data.confidence.toFixed(4)}`;
+    }
+  </script>
+</body>
+</html>

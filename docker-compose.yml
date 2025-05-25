@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - AWS_ACCESS_KEY_ID=fake_access_key
+      - AWS_SECRET_ACCESS_KEY=fake_secret_key
+      - S3_ENDPOINT_URL=http://localstack:4566
+
+  # Optional: Mock S3 with localstack
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=us-east-1

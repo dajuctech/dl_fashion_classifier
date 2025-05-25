@@ -1,0 +1,35 @@
+# Core Python
+numpy
+pandas
+
+# Deep Learning
+tensorflow==2.12.0
+keras
+
+# Backend API
+fastapi
+uvicorn[standard]
+
+# Cloud Simulation
+boto3
+botocore
+
+# Visualization & Reporting
+matplotlib
+seaborn
+plotly
+
+# Hyperparameter Tuning
+keras-tuner
+
+# Testing
+pytest
+
+# Frontend (Optional Streamlit)
+streamlit
+
+# Other Utilities
+pillow
+scikit-learn
+jupyter
+nbconvert

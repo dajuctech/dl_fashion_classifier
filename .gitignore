@@ -1,1 +1,55 @@
 __pycache__/\n*.pyc\n*.h5\nmodels/\ntuner_dir/\n.env\n.DS_Store
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Output files
+*.h5
+*.pkl
+*.joblib
+*.log
+
+# Model directories
+models/
+tuner_dir/
+checkpoints/
+
+# Data (raw or generated)
+data/raw/
+data/processed/
+#reports/
+
+# Local configurations
+*.env
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code files
+.vscode/
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Node/npm (if applicable)
+node_modules/
+
+# Other temp files
+*.tmp
+*.bak
+*.swp
+
+# Ignore frontend build (if built)
+#frontend/build/
